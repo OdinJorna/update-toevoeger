@@ -1,20 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoalitieTracker</title>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coalitietracker update generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
 
-<body>
+  <div class="columns">
+    <div class="column">
+      <section class="section">
+        <div class="container">
+          <h1 class="title is-1">
+            Coalitietracker Website scraper
+          </h1>
+          <p class="subtitle">
+            Vul hier een nieuwe bron toe om de formatting te krijgen voor de coalitietracker!
+          </p>
+        </div>
+      </section>
 
-    <h1>
-        CoalitieTracker test
-    </h1>
-    
-
-    <script src="script.js"></script>
-</body>
-
+      <section class="section">
+        <div class="field">
+            <label class="label">Datum</label>
+            <p>Let op: vul de datum aan elkaar in als jaar, maand en dag in getallen. Voorbeeld 20 december 2021 wordt: 20211220.</p>
+            <div class="control">
+              <input id="input-date" class="input" type="text" placeholder="Vul hier de datum in">
+            </div>
+            <label class="label">Naam bron</label>
+            <p>Volledige naam van de website, zoals bijvoorbeeld: NOS. Algemeen Dagblad.</p>
+            <div class="control">
+              <input id="input-source" class="input" type="text" placeholder="Vul hier de naam van de bron in">
+            </div>
+            <label class="label">URL</label>
+            <div class="control">
+              <input id="input-url" class="input" type="text" placeholder="Vul hier de URL van je link in">
+            </div>
+            <label class="label">Onder welk coalitie punt valt het?</label>
+            <p>Kopieer en plak de titel van het coalitiepunt</p>
+            <div class="control">
+              <input id="input-parent" class="input" type="text" placeholder="vul hier de titel van het punt in het coalitieplan in">
+            </div>
+            <div class="control">
+              <br>
+                <button id="tiddler-creatie" class="button is-link">Creëer update</button>
+                <button id="maak-leeg" class="button is-dange">Maak leeg</button>
+            </div>
+          </div>
+      </section>
+  </div>
+  
+    <div class="column">
+      <section class="section">
+        <p class="title is-4">
+            Kopieer hetvolgende:
+        </p>
+        <div class="box has-background-light">
+            <div id="tiddler-output">
+                <p>title: <span id="tiddler-title"></span></p>
+                <p>tags: Update</p>
+                <p>description: <span id="tiddler-description"></span></p>
+                <p>image: <span id="tiddler-image"></span></p>
+                <p>url: <span id="tiddler-url"></span></p>
+                <p>source: <span id="tiddler-source"></span></p>
+                <p>date: <span id="tiddler-date"></span></p>
+                <p>parent: <span id="tiddler-parent"></span></p>
+            </div>
+        </div>
+        <p class="title is-4">Ga nu naar <a href="https://github.com/OdinJorna/coalitieplannentracker/tree/main/tiddlers/Updates" target="">Github</a> om het daar naar toe te kopieren.</p>
+        <ol>
+          <li>Maak een nieuw bestand</li>
+          <li>Kopieer alles uit de grijze box hierboven naar de inhoud</li>
+          <li>de titel van het nieuwe bestand is <code>title</code>+<code>.tid</code></li>
+          <li>Maak een pull-request aan. Zodra ik het zie voeg ik het toe!</li>
+        </ol>
+      </section>
+    </div>
+  </div> 
+  <script src="script.js"></script>
+  </body>
 </html>
